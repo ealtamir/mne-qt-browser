@@ -51,8 +51,8 @@ except ImportError:
         from qtpy.QtWidgets import QApplication
         from qtpy.QtGui import QIcon
 
-        app_name = 'MNE-Python'
-        organization_name = 'MNE'
+        app_name = 'Pipeline Biomarkers'
+        organization_name = 'DeepPsy'
 
         # Fix from cbrnr/mnelab for app name in menu bar
         if sys.platform.startswith("darwin"):
@@ -66,13 +66,13 @@ except ImportError:
             except ModuleNotFoundError:
                 pass
 
-        if pg_app:
-            from pyqtgraph import mkQApp
-            app = mkQApp(app_name)
-        else:
-            app = (QApplication.instance()
-                   or QApplication(sys.argv or [app_name]))
-            app.setApplicationName(app_name)
+#         if pg_app:
+#             from pyqtgraph import mkQApp
+#             app = mkQApp(app_name)
+#         else:
+        app = (QApplication.instance()
+               or QApplication(sys.argv or [app_name]))
+        app.setApplicationName(app_name)
         app.setOrganizationName(organization_name)
 
         if enable_icon:
