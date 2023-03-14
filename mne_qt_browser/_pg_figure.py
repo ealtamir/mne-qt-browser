@@ -4682,6 +4682,7 @@ def _init_browser(**kwargs):
     _setup_ipython()
     setConfigOption('enableExperimental', True)
     app_kwargs = dict()
+    kwargs.put('splash', False)
     if kwargs.get('splash', False):
         app_kwargs['splash'] = 'Initializing mne-qt-browser...'
     out = _init_mne_qtapp(pg_app=False, **app_kwargs)
