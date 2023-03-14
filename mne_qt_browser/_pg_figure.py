@@ -4684,7 +4684,7 @@ def _init_browser(**kwargs):
     app_kwargs = dict()
     if kwargs.get('splash', False):
         app_kwargs['splash'] = 'Initializing mne-qt-browser...'
-    out = _init_mne_qtapp(pg_app=True, **app_kwargs)
+    out = _init_mne_qtapp(pg_app=False, **app_kwargs)
     if 'splash' in app_kwargs:
         kwargs['splash'] = out[1]  # returned as second element
     browser = MNEQtBrowser(**kwargs)
